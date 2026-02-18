@@ -18,10 +18,10 @@ public class InfoAdapter implements DataSource {
 
     @Override
     public int getEta() {
-        Date dataDiNascita = info.getDataDiNascita();
-        Calendar nascita = Calendar.getInstance();
-        nascita.setTime(dataDiNascita);
-        Calendar oggi = Calendar.getInstance();
+        Date dataDiNascita = info.getDataDiNascita(); //prendo data di nascita da info
+        Calendar nascita = Calendar.getInstance(); //creo calendario
+        nascita.setTime(dataDiNascita); // assegno a nascita la data di nascita
+        Calendar oggi = Calendar.getInstance(); //creo un calendar con valore oggi LocalDate.now()
 
         int eta = oggi.get(Calendar.YEAR) - nascita.get(Calendar.YEAR);
         return eta;
